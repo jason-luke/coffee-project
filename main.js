@@ -18,40 +18,24 @@ function renderCoffees(coffees) {
     return html;
 }
 
+
+
+
+
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
+    const filterItems = searchInput.value.toLowerCase()
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
-        if(selectedRoast === 'all'){
-        filteredCoffees.push(coffee)
+        if((coffee.roast === selectedRoast || selectedRoast === "all") && coffee.name.toLowerCase().includes(filterItems)){
+            filteredCoffees.push(coffee);
         }
-        else if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
-            }
-            else if (coffee.name.toLowerCase() === searchInput.value.toLowerCase()) {
-            filteredCoffees.push(coffee);
-            }
-          })
-              tbody.innerHTML = renderCoffees(filteredCoffees);
-          }
+    });
+    tbody.innerHTML = renderCoffees(filteredCoffees);
+}
 
 
-//        else{searchInput.addEventListener("input", function() {
-//            let searchValue = this.value.toLowerCase();
-//            let filteredData = coffees.filter(item => {
-//                return item.name.toLowerCase().indexOf(searchValue) !== -1;
-//            })
-//            tbody.innerHTML = renderCoffees(filteredData);
-//
-//
-//            console.log(filteredData);
-//        });
-//
-//        }
-//    });
-//    tbody.innerHTML = renderCoffees(filteredCoffees);
-//}
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -79,18 +63,9 @@ var coffees = [
 let searchInput = document.getElementById("searchInput");
 let searchValue = searchInput.toString().toLowerCase().value;
 
- searchInput.addEventListener("input", function() {
-     let searchValue = this.value.toLowerCase();
-     let filteredData = coffees.filter(item => {
-         return item.name.toLowerCase().indexOf(searchValue) !== -1;
-     })
-     // filteredData will contain the results
-
-     tbody.innerHTML = renderCoffees(filteredData);
-     console.log(filteredData);
- });
 
 
+searchInput.addEventListener("keyup", updateCoffees)
 
 
 
@@ -109,4 +84,6 @@ tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees);
-nameSelection.addEventListener('change', updateCoffees);
+nameSelection.addEventListener('keyup', updateCoffees);
+
+
