@@ -1,10 +1,10 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee px-5 w-50">';
+    var html = '<div class="coffee w-50 d-flex flex-direction-row">';
     html += '<p class="coffeeID">' + coffee.id + '</p>';
     html += '<h4 class="coffeeName">' + coffee.name + '</h4>';
-    html += '<p class="coffeeRoast">' + coffee.roast + '</p>';
+    html += '<p class="coffeeRoast px-2 text-secondary">' + coffee.roast + '</p>';
     html += '</div>';
 
     return html;
@@ -17,11 +17,6 @@ function renderCoffees(coffees) {
     }
     return html;
 }
-
-
-
-
-
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
@@ -85,5 +80,3 @@ tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees);
 nameSelection.addEventListener('keyup', updateCoffees);
-
-
