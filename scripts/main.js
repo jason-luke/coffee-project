@@ -1,3 +1,4 @@
+(function(){
 "use strict"
 
 function renderCoffee(coffee) {
@@ -80,3 +81,5 @@ userSubmit.addEventListener('click', userCoffee)
 submitButton.addEventListener('click', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees);
 nameSelection.addEventListener('keyup', updateCoffees);
+
+})();
