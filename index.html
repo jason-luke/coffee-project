@@ -9,19 +9,13 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-
+    <!--header-->
 <div class="header d-flex justify-content-center py-4">
     <h1>Coffee!</h1>
 </div>
-
+    <!--coffees-->
 <div class="container d-flex flex-direction-row">
 
-    <!--    <div class="header d-flex justify-content-center">-->
-    <!--        <h1>Coffee!</h1>-->
-    <!--    </div>-->
-
-
-    <!--coffee names-->
     <div class="container col-6">
         <div class="row">
             <div id="coffees" class="d-flex flex-wrap"></div>
@@ -31,6 +25,7 @@
     <!--search and filter area-->
     <div class="container col-12 d-flex">
         <div class="row col-6 ">
+            <div class="row">
             <form>
                 <label for="roast-selection" class="fw-bold w-100">Roast</label>
                 <select id="roast-selection" class="form-control w-100 my-2">
@@ -39,9 +34,6 @@
                     <option>medium</option>
                     <option>dark</option>
                 </select>
-
-
-
 
                 <label for="searchInput" class="fw-bold ">Coffee Name</label>
                 <div>
@@ -52,7 +44,30 @@
                 </div>
             </form>
         </div>
+<!--            add a coffee form-->
+        <div class="header2 row py-4">
+            <div class="d-flex text-center py-4">
+                <h1>Add a Coffee</h1>
+            </div>
+            <form>
+                <label for="user-roast-selection" class="fw-bold w-100">Roast</label>
+                <select id="user-roast-selection" class="form-control w-100 my-2">
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                </select>
+
+                <label for="user-input" class="fw-bold ">Name</label>
+                <div>
+                    <input id="user-input" class="form-control mb-2 w-100" type="search">
+                </div>
+                <div>
+                    <input id="user-submit" type="submit" class="w-100 bg-primary bg-gradient text-light rounded"/>
+                </div>
+            </form>
+        </div>
     </div>
+        </div>
 
     <!--coffee names-->
     <!--    <div class="container col-6">-->
