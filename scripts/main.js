@@ -30,7 +30,14 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-
+function userCoffee(e) {
+e.preventDefault();
+var selectedRoast = userRoast.value;
+var userInputName =  userInput.value;
+var userCoffee = {id: coffees.length + 1, name: userInputName, roast: selectedRoast}
+coffees.push(userCoffee);
+tbody.innerHTML = renderCoffees(coffees)
+}
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -50,22 +57,15 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-// working on search bar
-
-
-// test 2
-
 let searchInput = document.getElementById("searchInput");
 let searchValue = searchInput.toString().toLowerCase().value;
-
-
+let userInput = document.getElementById('user-input');
+let userRoast = document.getElementById('user-roast-selection')
+let userSubmit = document.getElementById('user-submit')
 
 searchInput.addEventListener("keyup", updateCoffees)
 
 
-
-
-//end search bar
 
 
 
@@ -76,7 +76,7 @@ var nameSelection = document.getElementById('searchInput');
 
 tbody.innerHTML = renderCoffees(coffees);
 
-
+userSubmit.addEventListener('click', userCoffee)
 submitButton.addEventListener('click', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees);
 nameSelection.addEventListener('keyup', updateCoffees);
