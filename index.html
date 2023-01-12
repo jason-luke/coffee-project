@@ -33,7 +33,7 @@
         <div class="row col-6 ">
             <form>
                 <label for="roast-selection" class="fw-bold w-100">Roast</label>
-                <select id="roast-selection" class="w-100 my-2">
+                <select id="roast-selection" class="form-control w-100 my-2">
                     <option>all</option>
                     <option>light</option>
                     <option>medium</option>
@@ -45,10 +45,10 @@
 
                 <label for="searchInput" class="fw-bold ">Coffee Name</label>
                 <div>
-                    <input id="searchInput" class="mb-2 w-100" type="search">
+                    <input id="searchInput" class="form-control mb-2 w-100" type="search">
                 </div>
                 <div>
-                    <input id="submit" type="submit" class="w-100 bg-primary bg-gradient text-light rounded"/>
+                    <input id="submit" type="submit" onsubmit="updateCoffees();return false" class="w-100 bg-primary bg-gradient text-light rounded"/>
                 </div>
             </form>
         </div>
