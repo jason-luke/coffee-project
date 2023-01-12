@@ -9,31 +9,57 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Coffee!</h1>
-<div class="container-fluid d-flex flex-row col-12">
 
-<div class="row justify-content-start col-6">
-    <form>
-    <label for="roast-selection" class="fw-bold">Roast</label>
-    <select id="roast-selection">
-        <option>all</option>
-        <option>light</option>
-        <option>medium</option>
-        <option>dark</option>
-    </select>
-    </form>
+<div class="header d-flex justify-content-center py-3">
+    <h1>Coffee!</h1>
 </div>
 
-    <form>
-        <div class="row col-6">
-            <label for="searchInput" class=" fw-bold">Coffee Name</label>
-            <input id="searchInput" type="search">
-            <input id="submit" type="submit" />
+<div class="container d-flex flex-direction-row">
+
+<!--    <div class="header d-flex justify-content-center">-->
+<!--        <h1>Coffee!</h1>-->
+<!--    </div>-->
+
+
+    <!--coffee names-->
+    <div class="container col-6">
+        <div class="row">
+            <div id="coffees" class="d-flex flex-wrap"></div>
         </div>
-    </form>
-<!--<div class="row">-->
-    <div id="coffees"></div>
-<!--</div>-->
+    </div>
+
+    <!--search and filter area-->
+    <div class="container col-12 d-flex">
+        <div class="row col-6 ">
+            <form>
+                <label for="roast-selection" class="fw-bold w-100">Roast</label>
+                <select id="roast-selection" class="w-100 my-2">
+                    <option>all</option>
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                </select>
+
+
+
+
+                <label for="searchInput" class="fw-bold ">Coffee Name</label>
+                    <div>
+                        <input id="searchInput" class="mb-2 w-100" type="search">
+                    </div>
+                    <div>
+                        <input id="submit" type="submit" class="w-100 bg-primary bg-gradient text-light rounded"/>
+                    </div>
+            </form>
+        </div>
+    </div>
+
+    <!--coffee names-->
+<!--    <div class="container col-6">-->
+<!--        <div class="row">-->
+<!--        <div id="coffees" class="d-flex flex-wrap"></div>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 
 
