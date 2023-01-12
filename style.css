@@ -10,3 +10,8 @@ td, th {
 .coffeeID {
 display: none;
 }
+
+.form-control:focus {
+    border-color: blue;
+    box-shadow: 0 0  0 0.2rem rgba(blue, .25);
+}
