@@ -1,3 +1,4 @@
+(function(){
 "use strict"
 
 function renderCoffee(coffee) {
@@ -17,6 +18,7 @@ function renderCoffees(coffees) {
     }
     return html;
 }
+
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
@@ -29,6 +31,9 @@ function updateCoffees(e) {
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
+
+//userCoffee takes input from the 'Make a Coffee' form, makes a new object
+//then pushes that object to the array 'coffees'
 
 function userCoffee(e) {
 e.preventDefault();
@@ -57,26 +62,26 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+//document selectors
+
 let searchInput = document.getElementById("searchInput");
 let searchValue = searchInput.toString().toLowerCase().value;
 let userInput = document.getElementById('user-input');
 let userRoast = document.getElementById('user-roast-selection')
 let userSubmit = document.getElementById('user-submit')
-
-searchInput.addEventListener("keyup", updateCoffees)
-
-
-
-
-
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
-var nameSelection = document.getElementById('searchInput');
 
+//render init
 tbody.innerHTML = renderCoffees(coffees);
 
+//event listeners
+
+searchInput.addEventListener("keyup", updateCoffees)
 userSubmit.addEventListener('click', userCoffee)
 submitButton.addEventListener('click', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees);
-nameSelection.addEventListener('keyup', updateCoffees);
+
+
+})();
